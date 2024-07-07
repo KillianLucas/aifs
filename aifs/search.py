@@ -162,7 +162,7 @@ def index_files(file_paths, existingIndex=None, indexPath="", python_docstrings_
     writeToIndex = len(deletedFiles) > 0 or len(modifiedFiles) > 0
     
     for file_path in file_paths:
-        if file_path.endswith("_index.aifs") and file_path.endswith(".DS_Store") and file_path.endswith("_.aifs"):
+        if file_path.endswith("_index.aifs") or file_path.endswith(".DS_Store") or file_path.endswith("_.aifs"):
             continue
         # if there are new files not in index, or modified Files, index them
         if file_path not in index or file_path in modifiedFiles:
